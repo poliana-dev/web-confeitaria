@@ -12,6 +12,30 @@
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 </head>
 <body>
+    <!-- nav -->
+    {% block menu %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Doces da Zinha!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Doces</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Bolos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Macarons</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
     <!-- corpo do sistema -->
     {% block corpo %}
         <div class="container-fluid">
@@ -19,7 +43,7 @@
             {% block cabecalho %}
                 <section class="row" id="cabecalho">
                     <article class="col-md-12">
-                        <h1 class="h1">BELO DOCE</h1>
+                        <h1 class="h1" id="titulo">Doce da Zinha!</h1>
                     </article>
                 </section>
             {% endblock %}
