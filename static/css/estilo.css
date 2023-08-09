@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+
+#cabecalho{
+    text-align: center;
+    background-image: url(../img/chocolate-6940529_1920.jpg);
+    height: 30em;
+    color: white;
+    background-size: auto;
+    background-position-y: 38em;
+    background-size: 98em;   
+    
+}
+
+#titulo{
+    padding-top: 2.5em;
+    font-family: 'Borel', cursive;
+    font-size: 80px;
+}
+
+.navbar-brand{
+    font-weight: 700;
+}.navbar{
+    font-weight: 500;
+}
