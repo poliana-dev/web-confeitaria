@@ -1,16 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@300&display=swap');
 
 
-#cabecalho{
+
+#cabecalho, #cabecalhoBolo, #cabecalhoMacarom, #cabecalhoDoce{
     text-align: center;
-    background-image: url(../img/chocolate-6940529_1920.jpg);
+    background-image: url(../img/desserts-1868181_1920.jpg);
     height: 30em;
     color: white;
     background-size: auto;
-    background-position-y: 38em;
+    background-position-y: 50em;
     background-size: 98em;   
     
 }
+
+#cabecalhoBolo{
+    background-image: url(../img/cake-1227842_1920.jpg);
+    background-size: 78em;
+    background-position-y: 45em;
+    background-position-x: 1.6em;
+}
+#cabecalhoDoce{
+    background-image: url(../img/bolos-extravagantes-na-mesa-banquete.jpg);
+}
+#cabecalhoMacarom{
+    background-image: url(../img/macarons-7716584_1920.jpg);
+    background-position-y: 43em;
+}
+
 
 #titulo{
     padding-top: 2.5em;
@@ -22,4 +39,10 @@
     font-weight: 700;
 }.navbar{
     font-weight: 500;
+}
+
+#conteudo{
+    text-align: center;
+    font-family: 'REM', sans-serif;
+    padding-top: 2em;
 }

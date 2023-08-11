@@ -16,20 +16,20 @@
     {% block menu %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Doces da Zinha!</a>
+            <a class="navbar-brand" href="{% url 'inicio' %}">Doces da Zinha!</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Doces</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'doces' %}">Doces</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Bolos</a>
+                    <a class="nav-link" href="{% url 'bolos' %}">Bolos</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Macarons</a>
+                    <a class="nav-link" href="{% url 'macarons' %}">Macarons</a>
                     </li>
                 </ul>
             </div>
@@ -43,7 +43,16 @@
             {% block cabecalho %}
                 <section class="row" id="cabecalho">
                     <article class="col-md-12">
-                        <h1 class="h1" id="titulo">Doce da Zinha!</h1>
+                        <h1 class="h1" id="titulo">Doceria da Zinha!</h1>
+                    </article>
+                </section>
+            {% endblock %}
+            <!-- conteudo -->
+            {% block conteudo %}
+                <section class="row" id="conteudo">
+                    <article class="col-md-12">
+                        <h2 class="h2">MAIS DOCE QUE BATATA DOCE!</h2>
+                        <p class="lead">Conheça nossos doces:</p>
                     </article>
                 </section>
             {% endblock %}
