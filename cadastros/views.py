@@ -1,3 +1,5 @@
 from django.shortcuts import render
+# from django.views.generic import CreateView, UpdateView
+# from django.views.generic import DeleteView, ListView
 
-# Create your views here.
+
