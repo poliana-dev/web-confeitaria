@@ -6,19 +6,19 @@ from .models import Bolos, Doces, Macarons, Sabor
 
 class BolosCreate(CreateView):
     model = Bolos
-    fields= ['nome', 'descricao', 'tamanho','observacao']
+    fields= ['nome', 'descricao', 'tamanho','sabor', 'observacao',]
     template_name= 'formBolos.html'
     success_url = reverse_lazy=('bolos')
 
 class DocesCreate(CreateView):
     model= Doces
-    fields = ['nome','descricao', 'tamanho']
+    fields = ['nome','descricao', 'tamanho', 'sabor']
     template_name= 'formDoces.html'
     success_url= reverse_lazy=('doces')
 
 class MacaronsCreate(CreateView):
     model=Macarons
-    fields= ['nome','descricao', 'tamanho']
+    fields= ['nome','descricao', 'tamanho', 'sabor']
     template_name= 'formMacarons.html'
     success_url= reverse_lazy('macarons')
 
