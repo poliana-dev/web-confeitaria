@@ -15,9 +15,9 @@
 
 #cabecalhoBolo{
     background-image: url(../img/cake-1227842_1920.jpg);
-    background-size: 78em;
-    background-position-y: 45em;
-    background-position-x: 1.6em;
+
+    /* background-position-y: 45em;
+    background-position-x: 1.6em; */
 }
 #cabecalhoDoce{
     background-image: url(../img/bolos-extravagantes-na-mesa-banquete.jpg);

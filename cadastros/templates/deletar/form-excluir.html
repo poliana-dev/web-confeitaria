@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Deletar</title>
+{% endblock %}
+
+{% block cabecalho %}
+{% endblock %}
+
+{% block conteudo %}
+    <section class="row" id="conteudo">
+        <article class="col-md-12">
+            <h2 class="h2">EXCLUIR REGISTRO</h2>
+            <p class="lead">Confirme todos os dados antes de excluí-los definitivamente.</p>
+
+            <hr>
+        </article>
+    </section>
+    <section class="row" id="formulario">
+        <article class="col-md-6">
+            <form action="#" method="post">
+                {% csrf_token %}
+
+                <p>Deseja excluir este registro: <b>{{ object }}</b> ?</p>
+
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </article>
+    </section>
+{% endblock %}

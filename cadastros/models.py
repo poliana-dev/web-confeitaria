@@ -6,6 +6,9 @@ class Sabor(models.Model):
     class Meta:
         verbose_name_plural= 'Sabores'
 
+    def __str__(self):
+        return "{}".format(self.sabor)
+
 class Doces(models.Model):
     nome= models.CharField(max_length=40)
     descricao= models.CharField(max_length=40, verbose_name='Descrição')
@@ -14,7 +17,7 @@ class Doces(models.Model):
     sabor= models.ForeignKey(Sabor, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nome, self.descricao, self.sabor
+        return "{} - {} : ({})" .format(self.nome,self.sabor, self.descricao)
     
     class Meta:
         verbose_name_plural= 'Doces'
@@ -28,7 +31,7 @@ class Bolos(models.Model):
     sabor= models.ForeignKey(Sabor, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nome, self.descricao,self.sabor, format(self.tamanho)
+        return "{} - {} : ({})" .format(self.nome,self.sabor, self.descricao)
     
     class Meta:
         verbose_name_plural= 'Bolos'
@@ -41,7 +44,7 @@ class Macarons(models.Model):
     sabor= models.ForeignKey(Sabor, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nome, self.descricao,self.sabor
+        return "{} - {} : ({})" .format(self.nome,self.sabor, self.descricao)
     
     class Meta:
         verbose_name_plural= 'Macarons'
