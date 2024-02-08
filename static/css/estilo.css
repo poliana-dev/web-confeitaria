@@ -3,14 +3,39 @@
 
 
 
-#cabecalho, #cabecalhoBolo, #cabecalhoMacarom, #cabecalhoDoce{
+/* #cabecalho, #cabecalhoBolo, #cabecalhoMacarom, #cabecalhoDoce{
     text-align: center;
-    background-image: url(../img/desserts-1868181_1920.jpg);
+    /* background-image: url(../img/desserts-1868181_1920.jpg);
     height: 30em;
-    color: white;
     background-size: auto;
     background-position-y: 50em;
-    background-size: 98em;   
+    background-size: 98em;   */
+    /* background-color: rgb(177, 146, 89); */
+    /* color: rgb(255, 255, 255); */
+/* } */ 
+
+
+#nav{
+    background-color: rgb(201, 196, 134);
+    font-family: 'REM';
+    box-shadow: 2px ;
+}
+
+
+.navbar-brand{
+    font-weight:500;
+
+}
+
+section .corpo{
+    padding-top: 1em;
+}
+
+
+img{
+    object-fit: cover;
+    height: 27em;
+    
 }
 
 #cabecalhoBolo{
@@ -21,6 +46,7 @@
 }
 #cabecalhoDoce{
     background-image: url(../img/bolos-extravagantes-na-mesa-banquete.jpg);
+
 }
 #cabecalhoMacarom{
     background-image: url(../img/macarons-7716584_1920.jpg);
@@ -34,14 +60,8 @@
     font-size: 80px;
 }
 
-.navbar-brand{
-    font-weight: 700;
-}.navbar{
-    font-weight: 500;
+.h3{
+    text-align: center;
 }
 
-#conteudo{
-    text-align: center;
-    font-family: 'REM', sans-serif;
-    padding-top: 2em;
-}
+

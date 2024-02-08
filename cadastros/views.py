@@ -78,7 +78,21 @@ class SaborDelete(DeleteView):
 
 ### LIST ###
 
+class BolosList(ListView):
+    model= Bolos
+    template_name= 'listas/form-listarBolos.html'
 
+class DocesList(ListView):
+    model = Doces
+    template_name = 'listas/form-listarDoces'
+
+class MacaronsList(ListView):
+    model = Macarons
+    template_name = 'listas/form-listarMacarons'
+
+class SaborList(ListView):
+    model = Sabor
+    template_name = 'listas/form-listarSabor'
 
 
     

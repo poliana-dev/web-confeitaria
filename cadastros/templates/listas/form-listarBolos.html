@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block cabecalho %}
+{% endblock %}
+
+{% block conteudo %}
+    <section class="row" id="conteudo">
+        <article class="col-md-12">
+            <h2 class="h2">CONHEÇA NOSSOS BOLOS</h2>
+            
+            <hr>
+        </article>
+    </section>
+
+    <!-- tabela -->
+    <section class="row">
+        <article class="col-md-8">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Tamanho</th>
+                            <th scope="col">Sabor</th>
+                            <th scope="col">Observação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for bolos in object_list %}
+                            <tr>
+                                <td>{{ bolos.nome }}</td>
+                                <td>{{ bolos.descricao }}</td>
+                                <td>{{ bolos.tamanho }}</td>
+                                <td>{{ bolos.sabor }}</td>
+                                <td>{{ bolos.observacao }}</td>
+                            </tr>
+
+                            {% empty %}
+                            <tr>
+                                <td colspan="5">Desculpe! Nenhum bolo foi registrado ainda.</td>
+                            </tr>
+                    </tbody>
+                        {% endfor %}
+                </table>
+
+                <a href="{% url 'cadastrar-bolos' %}" class="btn btn-primary">Cadastrar</a>
+            </div>
+        </article>
+    </section>
+{% endblock %}
