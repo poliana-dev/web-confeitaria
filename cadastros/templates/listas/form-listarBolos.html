@@ -4,50 +4,80 @@
 {% block cabecalho %}
 {% endblock %}
 
-{% block conteudo %}
-    <section class="row" id="conteudo">
-        <article class="col-md-12">
-            <h2 class="h2">CONHEÇA NOSSOS BOLOS</h2>
-            
-            <hr>
-        </article>
+
+{% block corpo %}
+    <section class="container-fluid">
+        <section class='container'>
+            <section class='row'>
+                <section class="col-md-12 corpo">
+                    <p class='lead'>Lista de bolos</p>
+                    <div>
+                        <button type="button" class="btn btn-primary btn-sm js-create">
+                            Cadastrar
+                        </button>
+                    
+                        
+                    </div>
+                </section>
+            </section>
+            <br>
+
+             <!-- tabela -->
+            <section class="row">
+                <article class="col-md-8">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Tamanho</th>
+                                    <th scope="col">Sabor</th>
+                                    <th scope="col">Observação</th>
+                                    <th scope='col'>Opções</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for bolos in object_list %}
+                                    <tr>
+                                        <td>{{ bolos.nome }}</td>
+                                        <td>{{ bolos.descricao }}</td>
+                                        <td>{{ bolos.tamanho }}</td>
+                                        <td>{{ bolos.sabor }}</td>
+                                        <td>{{ bolos.observacao }}</td>
+                                        <td><a href="#" class='btn btn-danger btn-sm'>Excluir</a> <a href="#" class='btn btn-warning btn-sm'>Editar</a></td>
+                                     
+                                    </tr>
+
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="5">Desculpe! Nenhum bolo foi registrado ainda.</td>
+                                    </tr>
+                            </tbody>
+                                {% endfor %}
+                        </table> 
+                    </div>
+
+                    <div class="modal fade" id="modal-bolo">
+                        <div class="modal-dialog">
+                            <div class="modal-content"></div>
+                        </div>
+                    </div>
+
+                    
+                </article>
+            </section>
+
+        </section>
     </section>
 
-    <!-- tabela -->
-    <section class="row">
-        <article class="col-md-8">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Descrição</th>
-                            <th scope="col">Tamanho</th>
-                            <th scope="col">Sabor</th>
-                            <th scope="col">Observação</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {% for bolos in object_list %}
-                            <tr>
-                                <td>{{ bolos.nome }}</td>
-                                <td>{{ bolos.descricao }}</td>
-                                <td>{{ bolos.tamanho }}</td>
-                                <td>{{ bolos.sabor }}</td>
-                                <td>{{ bolos.observacao }}</td>
-                            </tr>
-
-                            {% empty %}
-                            <tr>
-                                <td colspan="5">Desculpe! Nenhum bolo foi registrado ainda.</td>
-                            </tr>
-                    </tbody>
-                        {% endfor %}
-                </table>
-
-                <a href="{% url 'cadastrar-bolos' %}" class="btn btn-primary">Cadastrar</a>
-            </div>
-        </article>
-    </section>
+    
 {% endblock %}
+
+{% block scripts %}
+    <script src="{%static 'js/bolo.js'%}"></script>
+{% endblock  %}
+
+
+

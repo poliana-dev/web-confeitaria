@@ -1,8 +1,29 @@
+# versao django
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from .models import Bolos, Doces, Macarons, Sabor
+
+# versao ajax
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+from .forms import *
+
+# CRUD AJAX
+
+def bolo_create(request):
+    form= boloForm()
+    context= {'form' : form}
+    html_form = render_to_string('create-parcial/create-bolo.html', context, request=request)
+    return JsonResponse({'html_form': html_form})
+
+
+
+
+
+
+# CRUD DJANGO
 
 class BolosCreate(CreateView):
     model = Bolos
