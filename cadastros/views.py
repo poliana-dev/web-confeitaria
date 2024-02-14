@@ -13,10 +13,22 @@ from .forms import *
 # CRUD AJAX
 
 def bolo_create(request):
-    form= boloForm()
+    # realizar um post
+    data= dict() # um dicionario que é equivalente uma lista
+    if(request.method== 'POST'):  # se a solicitação for um post
+        form= boloForm(request.POST) # retorna o formulario predefinido anteriormente 
+        if form.is_valid():
+            form.save()
+            data['form_is_valid'] = True # se for valido salve no dicionario
+        else:
+            data['form_is_valid'] = False
+    else:
+        form= boloForm() # retorna apenas o formulario
+
+    # encaminha uma resposta HTTP valida
     context= {'form' : form}
-    html_form = render_to_string('create-parcial/create-bolo.html', context, request=request)
-    return JsonResponse({'html_form': html_form})
+    data['html_form'] = render_to_string('create-parcial/create-bolo.html', context, request=request)
+    return JsonResponse(data)
 
 
 
@@ -101,7 +113,7 @@ class SaborDelete(DeleteView):
 
 class BolosList(ListView):
     model= Bolos
-    template_name= 'listas/form-listarBolos.html'
+    template_name= 'listas/listarBolo.html'
 
 class DocesList(ListView):
     model = Doces
