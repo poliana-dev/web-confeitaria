@@ -94,7 +94,7 @@ class SaborUpdate(UpdateView):
 class BolosDelete(DeleteView):
     model=Bolos
     template_name= 'deletar/form-excluir.html'
-    success_url= reverse_lazy('inicio')
+    success_url= reverse_lazy('listar-bolos')
 
 class DocesDelete(DeleteView):
     model=Doces

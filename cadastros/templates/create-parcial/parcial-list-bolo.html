@@ -7,7 +7,7 @@
         <td>{{ bolo.sabor }}</td>
         <td>{{ bolo.observacao }}</td>
         <td>
-            <a href="#" class='btn btn-danger btn-sm'>Excluir</a> 
+            <a href="{% url 'excluir-bolos' bolo.pk%}" class='btn btn-danger btn-sm'>Excluir</a> 
             <a href="#" class='btn btn-warning btn-sm'>Editar</a>
         </td>
     </tr>
