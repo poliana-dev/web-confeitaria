@@ -20,6 +20,8 @@ def bolo_create(request):
         if form.is_valid():
             form.save()
             data['form_is_valid'] = True # se for valido salve no dicionario
+            bolos = Bolos.objects.all() # pega todos os objetos presentes em bolos
+            data['html_list'] = render_to_string('create-parcial/parcial-list-bolo.html', {'object_list': bolos}) # adicionamos uma nova chave em data que armazenará os objetos 
         else:
             data['form_is_valid'] = False
     else:

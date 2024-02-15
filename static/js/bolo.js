@@ -25,7 +25,9 @@ $(function(){
       dataType: 'json',
       success: function(data){
         if(data.form_is_valid){
-          alert('Bolo adcionado'); // por enquanto retorna este alert
+          // alert('Bolo adcionado'); // por enquanto retorna este alert
+          $('#tabela-bolo tbody').html(data.html_list); // retorna a tabela com os objeto sem a necessidade de atualizar a pagina
+          $('#modal-bolo').modal('hide'); // esconde o modal 
         }
         else{
           $('#modal-bolo .modal-content').html(data.html_form)
